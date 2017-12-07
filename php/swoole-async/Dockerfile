@@ -3,7 +3,7 @@ FROM php:7.1-cli-alpine
 LABEL MAINTAINER Shiyu Han <dock@moyo.im>
 
 # Ext versions
-ENV PROTOBUF_VER=3.5.0
+ENV PROTOBUF_VER=3.4.0
 ENV SWOOLE_VER=1.9.23
 
 # Add depends for runtime
