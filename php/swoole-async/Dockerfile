@@ -14,6 +14,7 @@ RUN apk add --update \
 RUN apk add --update --virtual builds \
     linux-headers \
     hiredis-dev \
+    openssl-dev \
     libc-dev \
     pcre-dev \
     autoconf \
@@ -33,7 +34,7 @@ RUN curl -sS -o /tmp/protobuf.tar.gz http://pecl.php.net/get/protobuf-$PROTOBUF_
 RUN curl -sS -o /tmp/swoole.tar.gz http://pecl.php.net/get/swoole-$SWOOLE_VER.tgz \
     && cd /tmp/ && tar zxvf swoole.tar.gz && cd swoole-$SWOOLE_VER \
     && phpize \
-    && ./configure --enable-async-redis \
+    && ./configure --enable-async-redis --enable-mysqlnd --enable-openssl \
     && make && make install \
     && docker-php-ext-enable swoole
 
