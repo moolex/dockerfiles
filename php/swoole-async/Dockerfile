@@ -1,10 +1,10 @@
-FROM php:7.1-cli-alpine
+FROM php:7.2-cli-alpine
 
 LABEL MAINTAINER Shiyu Han <dock@moyo.im>
 
 # Ext versions
-ENV PROTOBUF_VER=3.4.0
-ENV SWOOLE_VER=1.9.23
+ENV PROTOBUF_VER=3.5.1.1
+ENV SWOOLE_VER=2.0.12
 
 # Add depends for runtime
 RUN apk add --update \
