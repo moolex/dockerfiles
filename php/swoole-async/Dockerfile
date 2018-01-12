@@ -8,7 +8,8 @@ ENV SWOOLE_VER=2.0.12
 
 # Add depends for runtime
 RUN apk add --update \
-    hiredis
+    hiredis \
+    openssl
 
 # Add depends for building
 RUN apk add --update --virtual builds \
