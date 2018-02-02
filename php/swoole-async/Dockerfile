@@ -4,7 +4,7 @@ LABEL MAINTAINER Shiyu Han <dock@moyo.im>
 
 # Ext versions
 ENV PROTOBUF_VER=3.5.1.1
-ENV SWOOLE_VER=2.0.12
+ENV SWOOLE_VER=1.10.1
 
 # Add depends for runtime
 RUN apk add --update \
