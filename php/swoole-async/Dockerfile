@@ -39,6 +39,9 @@ RUN curl -sS -o /tmp/swoole.tar.gz http://pecl.php.net/get/swoole-$SWOOLE_VER.tg
     && make && make install \
     && docker-php-ext-enable swoole
 
+# Utils for testing
+RUN apk add --update inotify-tools
+
 # Cleanup
 RUN apk del builds && rm -rf /var/cache/apk/* /tmp/*
 
