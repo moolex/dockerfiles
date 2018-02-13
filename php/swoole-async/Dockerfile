@@ -42,6 +42,9 @@ RUN curl -sS -o /tmp/swoole.tar.gz http://pecl.php.net/get/swoole-$SWOOLE_VER.tg
 # Utils for testing
 RUN apk add --update inotify-tools
 
+# Add more exts
+RUN docker-php-ext-install bcmath
+
 # Cleanup
 RUN apk del builds && rm -rf /var/cache/apk/* /tmp/*
 
