@@ -5,6 +5,7 @@ LABEL MAINTAINER Shiyu Han <dock@moyo.im>
 # Ext versions
 ENV PROTOBUF_VER=3.5.1.1
 ENV SWOOLE_VER=1.10.1
+ENV AST_VER=0.1.6
 
 # Add depends for runtime
 RUN apk add --update \
@@ -38,6 +39,12 @@ RUN curl -sS -o /tmp/swoole.tar.gz http://pecl.php.net/get/swoole-$SWOOLE_VER.tg
     && ./configure --enable-async-redis --enable-mysqlnd --enable-openssl \
     && make && make install \
     && docker-php-ext-enable swoole
+
+# Ext ast
+RUN curl -sS -o /tmp/ast.tar.gz http://pecl.php.net/get/ast-$AST_VER.tgz \
+    && cd /tmp/ && tar zxvf ast.tar.gz && cd ast-$AST_VER \
+    && phpize && ./configure && make && make install \
+    && docker-php-ext-enable ast
 
 # Utils for testing
 RUN apk add --update inotify-tools
