@@ -52,6 +52,12 @@ RUN apk add --update inotify-tools
 # Add more exts
 RUN docker-php-ext-install bcmath
 
+# Timezone set
+RUN apk add --update tzdata
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo "Asia/Shanghai" > /etc/timezone
+RUN apk del tzdata
+
 # Cleanup
 RUN apk del builds && rm -rf /var/cache/apk/* /tmp/*
 
