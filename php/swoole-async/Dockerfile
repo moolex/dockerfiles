@@ -57,6 +57,7 @@ RUN apk add --update tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
 RUN apk del tzdata
+RUN echo "date.timezone = PRC" > /usr/local/etc/php/conf.d/tz.ini
 
 # Cleanup
 RUN apk del builds && rm -rf /var/cache/apk/* /tmp/*
