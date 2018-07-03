@@ -1,10 +1,10 @@
-FROM php:7.2-cli-alpine
+FROM moolex/php-eia
 
 LABEL MAINTAINER Shiyu Han <dock@moyo.im>
 
 # Ext versions
-ENV PROTOBUF_VER=3.5.1.1
-ENV SWOOLE_VER=1.10.1
+ENV PROTOBUF_VER=3.6.0
+ENV SWOOLE_VER=4.0.1
 ENV AST_VER=0.1.6
 
 # Add depends for runtime
