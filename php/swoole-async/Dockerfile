@@ -9,6 +9,7 @@ ENV AST_VER=0.1.6
 
 # Add depends for runtime
 RUN apk add --update \
+    libstdc++ \
     hiredis \
     openssl
 
