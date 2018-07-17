@@ -4,7 +4,7 @@ LABEL MAINTAINER Shiyu Han <dock@moyo.im>
 
 # Ext versions
 ENV PROTOBUF_VER=3.6.0
-ENV SWOOLE_VER=4.0.1
+ENV SWOOLE_VER=4.0.2
 ENV AST_VER=0.1.6
 
 # Add depends for runtime
