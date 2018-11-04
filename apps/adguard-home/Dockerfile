@@ -19,6 +19,7 @@ ENV ADGUARD_RELEASE ${ADGUARD_RELEASE}
 # AdGuard directory
 ARG ADGUARD_DIR="/data/adguard"
 ENV ADGUARD_DIR ${ADGUARD_DIR}
+ENV ADGUARD_CONF "${ADGUARD_DIR}/config"
 
 # Update CA certs and download AdGuard binaries
 RUN apk --no-cache --update add ca-certificates \
@@ -45,4 +46,4 @@ EXPOSE ${ADGUARD_UI_PORT}
 # Run AdGuardHome
 WORKDIR ${ADGUARD_DIR}
 VOLUME ${ADGUARD_DIR}
-ENTRYPOINT ./AdGuardHome --host ${ADGUARD_UI_HOST} --port ${ADGUARD_UI_PORT}
+ENTRYPOINT ./AdGuardHome --config ${ADGUARD_CONF} --host ${ADGUARD_UI_HOST} --port ${ADGUARD_UI_PORT}
