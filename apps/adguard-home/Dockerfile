@@ -19,7 +19,7 @@ ENV ADGUARD_RELEASE ${ADGUARD_RELEASE}
 # AdGuard directory
 ARG ADGUARD_DIR="/data/adguard"
 ENV ADGUARD_DIR ${ADGUARD_DIR}
-ENV ADGUARD_CONF "${ADGUARD_DIR}/config"
+ENV ADGUARD_CONF "${ADGUARD_DIR}/config/AdGuardHome.yaml"
 
 # Update CA certs and download AdGuard binaries
 RUN apk --no-cache --update add ca-certificates \
