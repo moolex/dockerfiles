@@ -7,4 +7,4 @@ RUN composer global require phpunit/phpunit
 
 RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
-ENV PATH="${PATH}:/root/.composer/vendor/bin"
+ENV PATH="${PATH}:${COMPOSER_HOME}/vendor/bin"
